@@ -7,61 +7,58 @@
     tools:context=".MainActivity">
 
     <!--  Global  -->
+
+    <!-- Pilihan COM   -->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gunting Batu Kertas"/>
-
-    <!-- Pilihan COM   -->
+        android:text="Gunting Batu Kertas"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="100dp" />
 
     <ImageView
         android:layout_width="109dp"
         android:layout_height="103dp"
-        android:rotation="90"
-        android:src="@drawable/batu2"
+        android:src="@drawable/batu"
         tools:layout_editor_absoluteX="32dp"
         tools:layout_editor_absoluteY="330dp" />
 
     <ImageView
         android:layout_width="96dp"
         android:layout_height="88dp"
-        android:rotation="-45"
-        android:src="@drawable/kertas2"
+        android:src="@drawable/kertas"
         tools:layout_editor_absoluteX="45dp"
         tools:layout_editor_absoluteY="445dp" />
 
-
-
-    <!--  Pilihan Player1  -->
     <ImageView
         android:layout_width="96dp"
         android:layout_height="88dp"
-        android:rotation="-100"
-        android:src="@drawable/gunting2"
+        android:src="@drawable/gunting"
         tools:layout_editor_absoluteX="45dp"
         tools:layout_editor_absoluteY="228dp" />
 
+
+    <!--  Pilihan Player1  -->
+
     <ImageView
         android:layout_width="96dp"
         android:layout_height="88dp"
-        android:rotation="-45"
-        android:src="@drawable/kertas2"
+        android:src="@drawable/kertas"
         tools:layout_editor_absoluteX="287dp"
         tools:layout_editor_absoluteY="445dp" />
 
     <ImageView
         android:layout_width="96dp"
         android:layout_height="88dp"
-        android:rotation="-100"
-        android:src="@drawable/gunting2"
+        android:src="@drawable/gunting"
         tools:layout_editor_absoluteX="287dp"
         tools:layout_editor_absoluteY="228dp" />
 
     <ImageView
         android:layout_width="109dp"
         android:layout_height="103dp"
-        android:rotation="90"
-        android:src="@drawable/batu2"
+        android:src="@drawable/batu"
         tools:layout_editor_absoluteX="274dp"
         tools:layout_editor_absoluteY="330dp" />
 
