@@ -1,4 +1,6 @@
 package com.example.game_suit_chp4
 
-class Game {
+abstract class Game() {
+    abstract fun play()
+
 }

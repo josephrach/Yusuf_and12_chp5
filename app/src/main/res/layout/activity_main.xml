@@ -1,5 +1,3 @@
-
-
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,6 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
 
     <TextView
@@ -16,105 +18,124 @@
         android:fontFamily="@font/palette_mosaic_regular"
         android:text="@string/judul_game"
         android:textAlignment="center"
-        android:textSize="29dp"
         android:textColor="#549f93"
+        android:textSize="30dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/game_status"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
-
+        app:layout_constraintBottom_toTopOf="@+id/horizontal1"
+        app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan"
+        app:layout_constraintStart_toStartOf="@+id/palingLuarKiri"
+        app:layout_constraintTop_toTopOf="@+id/palingLuarAtas" />
 
     <TextView
         android:id="@+id/game_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="348dp"
         android:text="@string/vs"
         android:textSize="20pt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/horizontal2"
+        app:layout_constraintEnd_toStartOf="@+id/guntingP1"
+        app:layout_constraintStart_toEndOf="@+id/guntingCom"
+        app:layout_constraintTop_toTopOf="@+id/horizontal1" />
+
 
     <ImageView
         android:id="@+id/tombolRefresh"
         android:layout_width="75dp"
         android:layout_height="69dp"
-        android:layout_marginBottom="16dp"
         android:src="@drawable/refresh"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.916"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintBottom_toTopOf="@+id/palingLuarBawah"
+        app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan" />
 
     <ImageView
         android:id="@+id/batuCom"
         android:layout_width="109dp"
         android:layout_height="103dp"
-        android:layout_marginBottom="136dp"
         android:src="@drawable/batu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/batuP1"
-        app:layout_constraintHorizontal_bias="0.303"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/horizontal2"
+        app:layout_constraintStart_toStartOf="@+id/palingLuarKiri" />
 
     <ImageView
         android:id="@+id/kertasCom"
         android:layout_width="96dp"
         android:layout_height="88dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="176dp"
         android:src="@drawable/kertas"
-        app:layout_constraintEnd_toStartOf="@+id/kertasP1"
-        app:layout_constraintHorizontal_bias="0.074"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/palingLuarKiri"
+        app:layout_constraintTop_toTopOf="@+id/horizontal1" />
 
     <ImageView
         android:id="@+id/guntingCom"
         android:layout_width="96dp"
         android:layout_height="88dp"
-        android:layout_marginStart="40dp"
         android:src="@drawable/gunting"
         app:layout_constraintBottom_toTopOf="@+id/batuCom"
-        app:layout_constraintEnd_toStartOf="@+id/guntingP1"
-        app:layout_constraintHorizontal_bias="0.074"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kertasCom"
-        app:layout_constraintVertical_bias="0.503" />
+        app:layout_constraintStart_toStartOf="@+id/palingLuarKiri"
+        app:layout_constraintTop_toBottomOf="@+id/kertasCom" />
 
     <ImageView
         android:id="@+id/kertasP1"
         android:layout_width="96dp"
         android:layout_height="88dp"
-        android:layout_marginEnd="44dp"
         android:src="@drawable/kertas"
-        app:layout_constraintBottom_toTopOf="@+id/guntingP1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.697" />
+        app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan"
+        app:layout_constraintTop_toTopOf="@+id/horizontal1" />
 
     <ImageView
         android:id="@+id/guntingP1"
         android:layout_width="96dp"
         android:layout_height="88dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="72dp"
         android:src="@drawable/gunting"
         app:layout_constraintBottom_toTopOf="@+id/batuP1"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan"
+        app:layout_constraintTop_toBottomOf="@+id/kertasP1" />
 
     <ImageView
         android:id="@+id/batuP1"
         android:layout_width="109dp"
         android:layout_height="103dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="52dp"
         android:src="@drawable/batu"
-        app:layout_constraintBottom_toTopOf="@+id/tombolRefresh"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/horizontal2"
+        app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/palingLuarAtas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="31dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/palingLuarKiri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="32dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/palingLuarBawah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="30dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/palingLuarKanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="30dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="629dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="212dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
