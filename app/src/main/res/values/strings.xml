@@ -1,10 +1,17 @@
 <resources>
     <string name="app_name">game_suit_chp4</string>
-    <string name="judul_game">
+
+    <string name="judul_batu">
         Batu
+    </string>
+    <string name="judul_gunting">
         Gunting
+    </string>
+    <string name="judul_kertas">
         Kertas
     </string>
+
+
     <string name="pemain1_menang">
         Pemain 1
         MENANG!
@@ -16,7 +23,17 @@
     <string name="draw">
         DRAW!
     </string>
-    <string name="vs">
+
+
+    <string name="game_status">
         VS
+    </string>
+
+
+    <string name="com">
+        COM
+    </string>
+    <string name="pemain1">
+        Pemain 1
     </string>
 </resources>

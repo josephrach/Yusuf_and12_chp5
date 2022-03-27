@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun main(args: Array<String>) {
-        val maen = GameSuit("hai")
+        val maen = GameSuit()
 
         maen.play()
     }

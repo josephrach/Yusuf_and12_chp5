@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,51 +10,115 @@
 
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content"/>
 
 
     <TextView
-        android:id="@+id/judulGame"
-        android:layout_width="187dp"
-        android:layout_height="140dp"
+        android:id="@+id/judulKertas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="92dp"
         android:fontFamily="@font/palette_mosaic_regular"
-        android:text="@string/judul_game"
+        android:rotation="-21"
+        android:text="@string/judul_kertas"
         android:textAlignment="center"
-        android:textColor="#549f93"
-        android:textSize="30dp"
+        android:textColor="#9C27B0"
+        android:textSize="45dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/horizontal1"
         app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan"
+        app:layout_constraintHorizontal_bias="0.632"
+        app:layout_constraintStart_toStartOf="@+id/palingLuarKiri" />
+
+    <TextView
+        android:id="@+id/judulGunting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/palette_mosaic_regular"
+        android:rotation="-21"
+        android:text="@string/judul_gunting"
+        android:textAlignment="center"
+        android:textColor="#4CAF50"
+        android:textSize="45dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/judulKertas"
+        app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan"
+        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintStart_toStartOf="@+id/palingLuarKiri"
+        app:layout_constraintTop_toBottomOf="@+id/judulBatu"
+        app:layout_constraintVertical_bias="0.266" />
+
+    <TextView
+        android:id="@+id/judulBatu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/palette_mosaic_regular"
+        android:rotation="-21"
+        android:rotationX="-4"
+        android:text="@string/judul_batu"
+        android:textAlignment="center"
+        android:textColor="#FF9800"
+        android:textSize="45dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan"
+        app:layout_constraintHorizontal_bias="0.271"
         app:layout_constraintStart_toStartOf="@+id/palingLuarKiri"
         app:layout_constraintTop_toTopOf="@+id/palingLuarAtas" />
 
     <TextView
         android:id="@+id/game_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/vs"
-        android:textSize="20pt"
+        android:layout_width="103dp"
+        android:layout_height="114dp"
+        android:fontFamily="@font/indie_flower_regular"
+        android:text="@string/game_status"
+        android:textAlignment="center"
+        android:textColor="@color/teal_700"
+        android:textSize="40pt"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/horizontal2"
         app:layout_constraintEnd_toStartOf="@+id/guntingP1"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toEndOf="@+id/guntingCom"
-        app:layout_constraintTop_toTopOf="@+id/horizontal1" />
-
+        app:layout_constraintTop_toTopOf="@+id/horizontal1"
+        app:layout_constraintVertical_bias="0.471" />
 
     <ImageView
         android:id="@+id/tombolRefresh"
-        android:layout_width="75dp"
-        android:layout_height="69dp"
+        android:layout_width="57dp"
+        android:layout_height="51dp"
         android:src="@drawable/refresh"
         app:layout_constraintBottom_toTopOf="@+id/palingLuarBawah"
         app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan" />
+
+
+    <ImageView
+        android:id="@+id/aktiveBatuP1"
+        android:layout_width="109dp"
+        android:layout_height="103dp"
+        android:layout_marginBottom="76dp"
+        android:background="@color/teal_700"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/palingLuarBawah"
+        app:layout_constraintStart_toStartOf="@+id/palingLuarKiri" />
 
     <ImageView
         android:id="@+id/batuCom"
         android:layout_width="109dp"
         android:layout_height="103dp"
+        android:layout_marginBottom="4dp"
         android:src="@drawable/batu"
         app:layout_constraintBottom_toTopOf="@+id/horizontal2"
-        app:layout_constraintStart_toStartOf="@+id/palingLuarKiri" />
+        app:layout_constraintStart_toEndOf="@id/palingLuarKiri"/>
+
+    <ImageView
+        android:id="@+id/activeKertasCom"
+        android:layout_width="96dp"
+        android:layout_height="88dp"
+        android:background="@color/teal_700"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/palingLuarKiri"
+        app:layout_constraintTop_toTopOf="@+id/horizontal1" />
 
     <ImageView
         android:id="@+id/kertasCom"
@@ -63,6 +129,16 @@
         app:layout_constraintTop_toTopOf="@+id/horizontal1" />
 
     <ImageView
+        android:id="@+id/activeGuntingCom"
+        android:layout_width="96dp"
+        android:layout_height="88dp"
+        android:background="@color/teal_700"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/aktiveBatuP1"
+        app:layout_constraintStart_toStartOf="@+id/palingLuarKiri"
+        app:layout_constraintTop_toBottomOf="@id/activeKertasCom" />
+
+    <ImageView
         android:id="@+id/guntingCom"
         android:layout_width="96dp"
         android:layout_height="88dp"
@@ -70,6 +146,17 @@
         app:layout_constraintBottom_toTopOf="@+id/batuCom"
         app:layout_constraintStart_toStartOf="@+id/palingLuarKiri"
         app:layout_constraintTop_toBottomOf="@+id/kertasCom" />
+
+
+    <ImageView
+        android:id="@+id/activeKertasP1"
+        android:layout_width="96dp"
+        android:layout_height="88dp"
+        android:background="@color/teal_700"
+        app:circularflow_radiusInDP=""
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan"
+        app:layout_constraintTop_toTopOf="@+id/horizontal1" />
 
     <ImageView
         android:id="@+id/kertasP1"
@@ -80,6 +167,16 @@
         app:layout_constraintTop_toTopOf="@+id/horizontal1" />
 
     <ImageView
+        android:id="@+id/activeGuntingP1"
+        android:layout_width="96dp"
+        android:layout_height="88dp"
+        android:background="@color/teal_700"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/aktiveBatuP1"
+        app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan"
+        app:layout_constraintTop_toBottomOf="@+id/activeKertasP1" />
+
+    <ImageView
         android:id="@+id/guntingP1"
         android:layout_width="96dp"
         android:layout_height="88dp"
@@ -87,6 +184,16 @@
         app:layout_constraintBottom_toTopOf="@+id/batuP1"
         app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan"
         app:layout_constraintTop_toBottomOf="@+id/kertasP1" />
+
+    <ImageView
+        android:id="@+id/aktiveBatuP1"
+        android:layout_width="109dp"
+        android:layout_height="103dp"
+        android:layout_marginBottom="72dp"
+        android:background="@color/teal_700"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/palingLuarBawah"
+        app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan" />
 
     <ImageView
         android:id="@+id/batuP1"
@@ -136,6 +243,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="212dp" />
+        app:layout_constraintGuide_begin="277dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/indie_flower_regular"
+        android:text="@string/com"
+        android:textSize="25dp"
+        android:textColor="@color/teal_700"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal1"
+        app:layout_constraintStart_toStartOf="@+id/palingLuarKiri" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/indie_flower_regular"
+        android:text="@string/pemain1"
+        android:textSize="25dp"
+        android:textColor="@color/teal_700"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal1"
+        app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

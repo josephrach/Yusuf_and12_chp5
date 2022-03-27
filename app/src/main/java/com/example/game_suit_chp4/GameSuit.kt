@@ -6,7 +6,7 @@ class GameSuit () : Game(){
 
 
     override fun play(){
-
+        println("hi")
 
     }
 }
