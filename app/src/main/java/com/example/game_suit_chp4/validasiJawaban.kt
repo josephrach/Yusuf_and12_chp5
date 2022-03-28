@@ -1,7 +1,8 @@
 package com.example.game_suit_chp4
 
-class validasiJawaban {
+import android.widget.ImageView
 
+class validasiJawaban {
 
     fun valid(){
 
