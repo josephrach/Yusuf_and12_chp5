@@ -20,13 +20,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun main(args: Array<String>) {
-        val maen = GameSuit()
+//        val maen = GameSuit()
+//
+//        while (maen.ck==0) {
+//            maen.answer.comChoice = maen.answer.dataJawaban.random()
+//            maen.play()
+//            maen.lanjut()
+//        }
+        var tampilan = AmbilView()
+        var a = tampilan.setListenerBatu()
 
-        while (maen.ck==0) {
-            maen.answer.comChoice = maen.answer.dataJawaban.random()
-            maen.play()
-            maen.lanjut()
-        }
+        println(a)
     }
 
 

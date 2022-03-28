@@ -11,6 +11,7 @@ class GameSuit () : Game(){
     var ck:Int = 0
     var lors: String = ""
     lateinit var binding :ActivityMainBinding
+    var tampilan = AmbilView()
 
 
     override fun play(){
