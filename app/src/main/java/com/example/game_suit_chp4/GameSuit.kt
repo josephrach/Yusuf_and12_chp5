@@ -8,19 +8,21 @@ import com.example.game_suit_chp4.databinding.ActivityMainBinding
 
 class GameSuit () : Game(){
     var answer = Jawaban()
+    var ambilaksi = AmbilAksi()
     var ck:Int = 0
     var lors: String = ""
     lateinit var binding :ActivityMainBinding
-    var tampilan = AmbilView()
 
 
     override fun play(){
-        var jawaban:String = ""
+        ambilaksi.checkView()
+
+        var jawaban:String = ambilaksi.chs
         var jw: Int = 1
+
 
         while (jw == 1) {
             println("Masukan pilihan (batu, gunting, kertas)")
-            jawaban = readln()
 
             when (jawaban) {
                 "batu" -> {

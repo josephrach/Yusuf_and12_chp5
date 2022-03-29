@@ -15,22 +15,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding =  ActivityMainBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
-    }
 
-    fun main(args: Array<String>) {
-//        val maen = GameSuit()
-//
-//        while (maen.ck==0) {
-//            maen.answer.comChoice = maen.answer.dataJawaban.random()
-//            maen.play()
-//            maen.lanjut()
-//        }
-        var tampilan = AmbilView()
-        var a = tampilan.setListenerBatu()
-
-        println(a)
     }
 
 

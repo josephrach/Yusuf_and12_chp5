@@ -70,10 +70,12 @@
         android:id="@+id/game_status"
         android:layout_width="103dp"
         android:layout_height="114dp"
+        android:background="#C63A3A"
+        android:backgroundTint="#FFFFFF"
         android:fontFamily="@font/indie_flower_regular"
         android:text="@string/game_status"
         android:textAlignment="center"
-        android:textColor="@color/teal_700"
+        android:textColor="#870101"
         android:textSize="40pt"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/horizontal2"
@@ -88,12 +90,13 @@
         android:layout_width="57dp"
         android:layout_height="51dp"
         android:src="@drawable/refresh"
+        android:onClick="@{() -> hendler.onRefresClick()}"
         app:layout_constraintBottom_toTopOf="@+id/palingLuarBawah"
         app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan" />
 
 
     <ImageView
-        android:id="@+id/aktiveBatuP1"
+        android:id="@+id/aktiveBatuCom"
         android:layout_width="109dp"
         android:layout_height="103dp"
         android:layout_marginBottom="76dp"
@@ -163,6 +166,7 @@
         android:layout_width="96dp"
         android:layout_height="88dp"
         android:src="@drawable/kertas"
+        android:clickable="false"
         app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan"
         app:layout_constraintTop_toTopOf="@+id/horizontal1" />
 
@@ -181,25 +185,27 @@
         android:layout_width="96dp"
         android:layout_height="88dp"
         android:src="@drawable/gunting"
+        android:clickable="false"
         app:layout_constraintBottom_toTopOf="@+id/batuP1"
         app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan"
         app:layout_constraintTop_toBottomOf="@+id/kertasP1" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/aktiveBatuP1"-->
-<!--        android:layout_width="109dp"-->
-<!--        android:layout_height="103dp"-->
-<!--        android:layout_marginBottom="72dp"-->
-<!--        android:background="@color/teal_700"-->
-<!--        android:visibility="invisible"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/palingLuarBawah"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan" />-->
+    <ImageView
+        android:id="@+id/aktiveBatuP1"
+        android:layout_width="109dp"
+        android:layout_height="103dp"
+        android:layout_marginBottom="72dp"
+        android:background="@color/teal_700"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/palingLuarBawah"
+        app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan" />
 
     <ImageView
         android:id="@+id/batuP1"
         android:layout_width="109dp"
         android:layout_height="103dp"
         android:src="@drawable/batu"
+        android:clickable="false"
         app:layout_constraintBottom_toTopOf="@+id/horizontal2"
         app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan" />
 
