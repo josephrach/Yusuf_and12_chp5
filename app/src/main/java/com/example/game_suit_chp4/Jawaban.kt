@@ -44,9 +44,12 @@ class Jawaban {
             }
             "gunting"-> {
                 binding.gameStatus.setText("@strings.draw")
-                binding.activeGuntingCom.t
+                binding.activeGuntingCom.isVisible
             }
-            "kertas"-> binding.gameStatus.setText("@strings.pemain1_menang")
+            "kertas"-> {
+                binding.gameStatus.setText("@strings.pemain1_menang")
+                binding.kertasCom.isVisible
+            }
         }
     }
     fun pilihKertas(){
