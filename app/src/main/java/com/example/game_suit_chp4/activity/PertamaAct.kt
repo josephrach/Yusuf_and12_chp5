@@ -18,7 +18,7 @@ class PertamaAct : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var game = GameSuit()
+        val game = GameSuit()
         game.play()
     }
 
