@@ -41,7 +41,9 @@
     <string name="frag_landing_page1">
         Bermain suit melawan sesama pemain.
     </string>
-
+    <string name="frag_landing_page2">
+        Bermain suit melawan komputer.
+    </string>
 
 
         "Material is the metaphor.\n\n"
