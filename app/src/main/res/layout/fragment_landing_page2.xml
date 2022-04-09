@@ -38,7 +38,5 @@
             tools:layout_editor_absoluteX="56dp"
             tools:layout_editor_absoluteY="320dp" />
 
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
