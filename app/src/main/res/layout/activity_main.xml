@@ -75,7 +75,7 @@
         android:fontFamily="@font/indie_flower_regular"
         android:text="@string/game_status"
         android:textAlignment="center"
-        android:textColor="#870101"
+        android:textColor="#FBC02D"
         android:textSize="40pt"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/horizontal2"

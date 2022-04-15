@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragment.LandingPage1">
+    android:layout_height="match_parent">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,7 +24,7 @@
         <TextView
             android:layout_width="298dp"
             android:layout_height="99dp"
-            android:fontFamily="@font/PatrickHand_Regular"
+            android:fontFamily="@font/patrick_hand_regular"
             android:text="Bermain suit melawan sesama pemain."
             android:textAlignment="center"
             android:textSize="30sp"
