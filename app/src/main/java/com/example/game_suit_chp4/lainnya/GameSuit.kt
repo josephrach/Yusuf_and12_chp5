@@ -1,9 +1,5 @@
-package com.example.game_suit_chp4
+package com.example.game_suit_chp4.lainnya
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.widget.*
 import com.example.game_suit_chp4.databinding.ActivityMainBinding
 
 class GameSuit () : Game(){

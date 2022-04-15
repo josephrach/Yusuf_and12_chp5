@@ -10,15 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Game_suit_chp4">
         <activity
-            android:name=".activity.PertamaAct"
-            android:exported="false" />
-        <activity
-            android:name=".activity.SatuActScroll"
-            android:exported="false"
-            android:label="@string/title_activity_satu_act_scroll"
-            android:theme="@style/Theme.Game_suit_chp4.NoActionBar" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

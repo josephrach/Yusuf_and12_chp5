@@ -1,4 +1,4 @@
-package com.example.game_suit_chp4
+package com.example.game_suit_chp4.lainnya
 
 import com.example.game_suit_chp4.databinding.ActivityMainBinding
 

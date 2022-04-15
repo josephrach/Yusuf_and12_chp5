@@ -1,4 +1,4 @@
-package com.example.game_suit_chp4
+package com.example.game_suit_chp4.lainnya
 
 fun main(args: Array<String>) {
 //    val maen = GameSuit()
