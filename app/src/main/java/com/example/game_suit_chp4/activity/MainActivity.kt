@@ -2,8 +2,14 @@ package com.example.game_suit_chp4.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.transition.Slide
+import androidx.viewpager.widget.ViewPager
 import com.example.game_suit_chp4.R
-//import com.example.game_suit_chp4.databinding.ActivityMainBinding
+import com.example.game_suit_chp4.adapter.SliderManagerAdapter
+import com.example.game_suit_chp4.fragment.LandingPageFragment1
+import com.example.game_suit_chp4.fragment.LandingPageFragment2
+import com.example.game_suit_chp4.fragment.LandingPageFragment3
+import com.example.game_suit_chp4.databinding.ActivityMainBinding
 
 //import kotlinx.android.synthetic.main.activity_main.*
 
@@ -16,7 +22,23 @@ class MainActivity : AppCompatActivity() {
 //        binding =  ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
 
+        setupViewPager()
 //        attachSplashFragment()
+    }
+
+    private fun setupViewPager(){
+        val vpSlider : ViewPager = findViewById(R.id.vp_slider)
+        val vpAdapter = SliderManagerAdapter(supportFragmentManager)
+
+        val lp1 = LandingPageFragment1()
+        val lp2 = LandingPageFragment2()
+        val lp3 = LandingPageFragment3()
+        val fragmentList = listOf(
+            lp1,lp2,lp3
+        )
+        vpAdapter.addFragmentList(fragmentList)
+        vpSlider.adapter = vpAdapter
+        println("set brasil")
     }
 
 //    private fun attachSplashFragment(){
@@ -26,5 +48,4 @@ class MainActivity : AppCompatActivity() {
 //        fragmentTransaction.add(container,splashFragment)
 //        fragmentTransaction.commit()
 //    }
-
 }
