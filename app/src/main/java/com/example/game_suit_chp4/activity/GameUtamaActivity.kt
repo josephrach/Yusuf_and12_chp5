@@ -6,7 +6,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.game_suit_chp4.R
-import com.example.game_suit_chp4.lainnya.GameSuit
 
 class GameUtamaActivity : AppCompatActivity() {
     val bundle = Bundle()
@@ -76,6 +75,5 @@ class GameUtamaActivity : AppCompatActivity() {
     private fun vsComputer() {}
 
     fun permainan(){
-        val gameSuit = GameSuit()
     }
 }
