@@ -38,7 +38,6 @@ class MainActivity : AppCompatActivity() {
         )
         vpAdapter.addFragmentList(fragmentList)
         vpSlider.adapter = vpAdapter
-        println("set brasil")
     }
 
 //    private fun attachSplashFragment(){
