@@ -54,6 +54,13 @@
     <string name="large_text">
         L
     </string>
+<!--    dialog result fragment-->
+    <string name="hasil_pencarian">
+        Hasil Pencarian
+    </string>
+    <string name="status_kemenangan">
+        SERI!
+    </string>
 
         "Material is the metaphor.\n\n"
 

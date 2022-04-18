@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Game_suit_chp4">
         <activity
-            android:name=".activity.HalamanMenuActivity"
+            android:name=".activity.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SplashScreenActivity"/>
+        <activity android:name=".activity.HalamanMenuActivity"/>
         <activity android:name=".activity.MainActivity"/>
         <activity android:name=".activity.LandingPageActivity"/>
         <activity android:name=".activity.GameUtamaActivity"/>
