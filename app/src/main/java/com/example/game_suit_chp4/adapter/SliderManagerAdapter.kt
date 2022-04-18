@@ -11,6 +11,7 @@ import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 //import com.example.game_suit_chp4.databinding.ActivityMainBinding
 
+@Suppress("DEPRECATION")
 class SliderManagerAdapter(fragmentManager: FragmentManager) : FragmentStatePagerAdapter(fragmentManager,
     BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 

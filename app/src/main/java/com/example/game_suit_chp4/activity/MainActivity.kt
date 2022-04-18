@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 //        binding =  ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
 
-        setupViewPager()
+//        setupViewPager()
 //        attachSplashFragment()
     }
 
