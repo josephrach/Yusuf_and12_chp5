@@ -17,7 +17,7 @@
 
 
         <TextView
-            android:id="@+id/judulKertas"
+            android:id="@+id/txt_judulKertas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="92dp"
@@ -34,7 +34,7 @@
             app:layout_constraintStart_toStartOf="@+id/palingLuarKiri" />
 
         <TextView
-            android:id="@+id/judulGunting"
+            android:id="@+id/txt_judulGunting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/palette_mosaic_regular"
@@ -44,15 +44,15 @@
             android:textColor="#4CAF50"
             android:textSize="45dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/judulKertas"
+            app:layout_constraintBottom_toTopOf="@+id/txt_judulKertas"
             app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan"
             app:layout_constraintHorizontal_bias="0.423"
             app:layout_constraintStart_toStartOf="@+id/palingLuarKiri"
-            app:layout_constraintTop_toBottomOf="@+id/judulBatu"
+            app:layout_constraintTop_toBottomOf="@+id/txt_judulBatu"
             app:layout_constraintVertical_bias="0.266" />
 
         <TextView
-            android:id="@+id/judulBatu"
+            android:id="@+id/txt_judulBatu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -70,7 +70,7 @@
             app:layout_constraintTop_toTopOf="@+id/palingLuarAtas" />
 
         <TextView
-            android:id="@+id/game_status"
+            android:id="@+id/txt_game_status"
             android:layout_width="103dp"
             android:layout_height="114dp"
             android:background="#C63A3A"
@@ -82,14 +82,14 @@
             android:textSize="40pt"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/horizontal2"
-            app:layout_constraintEnd_toStartOf="@+id/guntingP1"
+            app:layout_constraintEnd_toStartOf="@+id/img_guntingP1"
             app:layout_constraintHorizontal_bias="0.472"
-            app:layout_constraintStart_toEndOf="@+id/guntingCom"
+            app:layout_constraintStart_toEndOf="@+id/img_guntingCom"
             app:layout_constraintTop_toTopOf="@+id/horizontal1"
             app:layout_constraintVertical_bias="0.471" />
 
         <ImageView
-            android:id="@+id/tombolRefresh"
+            android:id="@+id/img_tombolRefresh"
             android:layout_width="57dp"
             android:layout_height="51dp"
             android:onClick="@{() -> hendler.onRefresClick()}"
@@ -99,7 +99,7 @@
 
 
         <ImageView
-            android:id="@+id/aktiveBatuCom"
+            android:id="@+id/img_aktiveBatuCom"
             android:layout_width="109dp"
             android:layout_height="103dp"
             android:layout_marginBottom="76dp"
@@ -109,7 +109,7 @@
             app:layout_constraintStart_toStartOf="@+id/palingLuarKiri" />
 
         <ImageView
-            android:id="@+id/batuCom"
+            android:id="@+id/img_batuCom"
             android:layout_width="109dp"
             android:layout_height="103dp"
             android:layout_marginBottom="4dp"
@@ -118,7 +118,7 @@
             app:layout_constraintStart_toEndOf="@id/palingLuarKiri" />
 
         <ImageView
-            android:id="@+id/activeKertasCom"
+            android:id="@+id/img_activeKertasCom"
             android:layout_width="96dp"
             android:layout_height="88dp"
             android:background="@color/teal_700"
@@ -127,7 +127,7 @@
             app:layout_constraintTop_toTopOf="@+id/horizontal1" />
 
         <ImageView
-            android:id="@+id/kertasCom"
+            android:id="@+id/img_kertasCom"
             android:layout_width="96dp"
             android:layout_height="88dp"
             android:src="@drawable/kertas"
@@ -135,27 +135,27 @@
             app:layout_constraintTop_toTopOf="@+id/horizontal1" />
 
         <ImageView
-            android:id="@+id/activeGuntingCom"
+            android:id="@+id/img_activeGuntingCom"
             android:layout_width="96dp"
             android:layout_height="88dp"
             android:background="@color/teal_700"
             android:visibility="invisible"
-            app:layout_constraintBottom_toTopOf="@id/aktiveBatuP1"
+            app:layout_constraintBottom_toTopOf="@id/img_aktiveBatuP1"
             app:layout_constraintStart_toStartOf="@+id/palingLuarKiri"
-            app:layout_constraintTop_toBottomOf="@id/activeKertasCom" />
+            app:layout_constraintTop_toBottomOf="@id/img_activeKertasCom" />
 
         <ImageView
-            android:id="@+id/guntingCom"
+            android:id="@+id/img_guntingCom"
             android:layout_width="96dp"
             android:layout_height="88dp"
             android:src="@drawable/gunting"
-            app:layout_constraintBottom_toTopOf="@+id/batuCom"
+            app:layout_constraintBottom_toTopOf="@+id/img_batuCom"
             app:layout_constraintStart_toStartOf="@+id/palingLuarKiri"
-            app:layout_constraintTop_toBottomOf="@+id/kertasCom" />
+            app:layout_constraintTop_toBottomOf="@+id/img_kertasCom" />
 
 
         <ImageView
-            android:id="@+id/activeKertasP1"
+            android:id="@+id/img_activeKertasP1"
             android:layout_width="96dp"
             android:layout_height="88dp"
             android:background="@color/teal_700"
@@ -165,7 +165,7 @@
             app:layout_constraintTop_toTopOf="@+id/horizontal1" />
 
         <ImageView
-            android:id="@+id/kertasP1"
+            android:id="@+id/img_kertasP1"
             android:layout_width="96dp"
             android:layout_height="88dp"
             android:clickable="false"
@@ -174,27 +174,27 @@
             app:layout_constraintTop_toTopOf="@+id/horizontal1" />
 
         <ImageView
-            android:id="@+id/activeGuntingP1"
+            android:id="@+id/img_activeGuntingP1"
             android:layout_width="96dp"
             android:layout_height="88dp"
             android:background="@color/teal_700"
             android:visibility="invisible"
-            app:layout_constraintBottom_toTopOf="@+id/aktiveBatuP1"
+            app:layout_constraintBottom_toTopOf="@+id/img_aktiveBatuP1"
             app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan"
-            app:layout_constraintTop_toBottomOf="@+id/activeKertasP1" />
+            app:layout_constraintTop_toBottomOf="@+id/img_activeKertasP1" />
 
         <ImageView
-            android:id="@+id/guntingP1"
+            android:id="@+id/img_guntingP1"
             android:layout_width="96dp"
             android:layout_height="88dp"
             android:clickable="false"
             android:src="@drawable/gunting"
-            app:layout_constraintBottom_toTopOf="@+id/batuP1"
+            app:layout_constraintBottom_toTopOf="@+id/img_batuP1"
             app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan"
-            app:layout_constraintTop_toBottomOf="@+id/kertasP1" />
+            app:layout_constraintTop_toBottomOf="@+id/img_kertasP1" />
 
         <ImageView
-            android:id="@+id/aktiveBatuP1"
+            android:id="@+id/img_aktiveBatuP1"
             android:layout_width="109dp"
             android:layout_height="103dp"
             android:layout_marginBottom="72dp"
@@ -204,7 +204,7 @@
             app:layout_constraintEnd_toStartOf="@+id/palingLuarKanan" />
 
         <ImageView
-            android:id="@+id/batuP1"
+            android:id="@+id/img_batuP1"
             android:layout_width="109dp"
             android:layout_height="103dp"
             android:clickable="false"
