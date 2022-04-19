@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,17 @@ class ResultDialogActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dialog_fragment_result)
 
+        val bundle = intent.extras
+        val pemenang = bundle?.getString("pemenang")
+        val teksStatus = findViewById<TextView>(R.id.txt_status_hasil)
+
+        when(pemenang){
+            "seri" -> teksStatus.setText(R.string.status_seri)
+            "p1" -> teksStatus.setText(R.string.status_p1_menang)
+            "com" -> teksStatus.setText(R.string.status_p2_menang)
+        }
+
+        teksStatus.setText(R.string.status_p1_menang)
         setDialogListener()
     }
     

@@ -58,8 +58,15 @@
     <string name="hasil_pencarian">
         Hasil Pencarian
     </string>
-    <string name="status_kemenangan">
+
+    <string name="status_seri">
         SERI!
+    </string>
+    <string name="status_p1_menang">
+        ... Menang
+    </string>
+    <string name="status_p2_menang">
+        Pemain 2 Menang
     </string>
 
         "Material is the metaphor.\n\n"

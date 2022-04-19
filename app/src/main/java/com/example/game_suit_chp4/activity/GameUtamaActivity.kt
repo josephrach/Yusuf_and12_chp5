@@ -27,11 +27,14 @@ class GameUtamaActivity : AppCompatActivity() {
             else -> Toast.makeText(this, "ini error", Toast.LENGTH_SHORT).show()
         }
 
+        val jawabann :String
+
     }
 
     private fun vsPemain() {
-        println("berak")
-
+        val dataJawaban = mutableListOf("batu","gunting","kertas")
+        val comJawab = dataJawaban.random()
+        var jawaban :String
         val batuP = findViewById<View>(R.id.img_batuP1)
         val guntingP = findViewById<View>(R.id.img_guntingP1)
         val kertasP = findViewById<View>(R.id.img_kertasP1)
@@ -39,45 +42,97 @@ class GameUtamaActivity : AppCompatActivity() {
         val guntingC = findViewById<View>(R.id.img_guntingCom)
         val kertasC = findViewById<View>(R.id.img_kertasCom)
 
-        val halamanIntent = Intent(this, SplashScreenActivity::class.java)
+        val halamanIntent = Intent(this, ResultDialogActivity::class.java)
 
         batuP.setOnClickListener() {
-            Toast.makeText(this@GameUtamaActivity, "Player1 memilih Batu", Toast.LENGTH_SHORT)
-                .show()
-
+            jawaban ="batuP"
+            when(comJawab){
+                "batu" -> bundle.putString("pemenang","seri")
+                "kertas" -> bundle.putString("pemenang","com")
+                "gunting" -> bundle.putString("pemenang","p1")
+            }
+            halamanIntent.putExtras(bundle)
             startActivity(halamanIntent)
         }
         guntingP.setOnClickListener() {
-            Toast.makeText(this@GameUtamaActivity, "Player1 memilih gunting", Toast.LENGTH_SHORT)
-                .show()
+            jawaban ="guntingP"
+            when(comJawab){
+                "batu" -> bundle.putString("pemenang","com")
+                "kertas" -> bundle.putString("pemenang","p1")
+                "gunting" -> bundle.putString("pemenang","seri")
+            }
+            halamanIntent.putExtras(bundle)
             startActivity(halamanIntent)
         }
         kertasP.setOnClickListener() {
-            Toast.makeText(this@GameUtamaActivity, "Player1 memilih kertas", Toast.LENGTH_SHORT)
-                .show()
+            jawaban ="kertasP"
+            when(comJawab){
+                "batu" -> bundle.putString("pemenang","p1")
+                "kertas" -> bundle.putString("pemenang","seri")
+                "gunting" -> bundle.putString("pemenang","com")
+            }
+            halamanIntent.putExtras(bundle)
             startActivity(halamanIntent)
         }
         batuC.setOnClickListener() {
-            Toast.makeText(this@GameUtamaActivity, "Player2 memilih batu", Toast.LENGTH_SHORT)
-                .show()
+            jawaban ="batuP"
+            when(comJawab){
+                "batu" -> bundle.putString("pemenang","seri")
+                "kertas" -> bundle.putString("pemenang","p1")
+                "gunting" -> bundle.putString("pemenang","com")
+            }
+            halamanIntent.putExtras(bundle)
             startActivity(halamanIntent)
         }
         guntingC.setOnClickListener() {
-            Toast.makeText(this@GameUtamaActivity, "Player2 memilih gunting", Toast.LENGTH_SHORT)
-                .show()
+            jawaban ="guntingP"
+            when(comJawab){
+                "batu" -> bundle.putString("pemenang","p1")
+                "kertas" -> bundle.putString("pemenang","com")
+                "gunting" -> bundle.putString("pemenang","seri")
+            }
+            halamanIntent.putExtras(bundle)
             startActivity(halamanIntent)
         }
         kertasC.setOnClickListener() {
-            Toast.makeText(this@GameUtamaActivity, "Player2 memilih kertas", Toast.LENGTH_SHORT)
-                .show()
+            jawaban ="kertasP"
+            when(comJawab){
+                "batu" -> bundle.putString("pemenang","com")
+                "kertas" -> bundle.putString("pemenang","seri")
+                "gunting" -> bundle.putString("pemenang","p1")
+            }
+            halamanIntent.putExtras(bundle)
             startActivity(halamanIntent)
         }
+
+
+
     }
 
     private fun vsComputer() {
-        println("tai")
+        var jawaban: String
+        val batuP = findViewById<View>(R.id.img_batuP1)
+        val guntingP = findViewById<View>(R.id.img_guntingP1)
+        val kertasP = findViewById<View>(R.id.img_kertasP1)
+
+        val halamanIntent = Intent(this, ResultDialogActivity::class.java)
+
+        batuP.setOnClickListener() {
+            jawaban = "batuP"
+            startActivity(halamanIntent)
+        }
+        guntingP.setOnClickListener() {
+            jawaban = "guntingP"
+            startActivity(halamanIntent)
+        }
+        kertasP.setOnClickListener() {
+            jawaban = "kertasP"
+            startActivity(halamanIntent)
+
+        }
     }
 
     fun permainan(){
+
     }
 }
