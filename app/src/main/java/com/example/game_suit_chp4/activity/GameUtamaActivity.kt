@@ -9,6 +9,9 @@ import com.example.game_suit_chp4.R
 
 class GameUtamaActivity : AppCompatActivity() {
     val bundle = Bundle()
+    object Dialog {
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

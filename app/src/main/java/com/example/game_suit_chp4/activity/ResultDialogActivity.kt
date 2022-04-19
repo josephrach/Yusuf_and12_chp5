@@ -17,9 +17,6 @@ class ResultDialogActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dialog_fragment_result)
 
-        val resultDialog = AlertDialog.Builder(this)
-        resultDialog.show()
-
         setDialogListener()
     }
     
