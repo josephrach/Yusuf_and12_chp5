@@ -9,29 +9,28 @@ import com.example.game_suit_chp4.R
 
 class GameUtamaActivity : AppCompatActivity() {
     val bundle = Bundle()
-    object Dialog {
-
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_game_utama)
 
-        var pilihanUser1 = intent.extras?.getInt("pilihanMenu1")
-        var pilihanUser2 = intent.extras?.getInt("pilihanMenu2")
-        var hasilJumlah = pilihanUser1?.plus(pilihanUser2!!)
-        println(hasilJumlah)
+        val bundle = intent.extras
+        val pilihanUser = bundle?.getString("pilihanUser")
+//        val pilihanUser2 = bundle?.getInt("pilihanMenu2")
+//        val hasilJumlah = pilihanUser1?.plus(pilihanUser2!!)
+        print(pilihanUser)
 //        Toast.makeText(this, "${pilihanUser}", Toast.LENGTH_SHORT).show()
 
-        vsPemain()
-//        when(hasilJumlah){
-//            1 -> vsPemain()
-//            2 -> vsComputer()
-//            else -> Toast.makeText(this, "ini error", Toast.LENGTH_SHORT).show()
-//        }
+        when(pilihanUser){
+            "saya 1" -> vsPemain()
+            "saya 2" -> vsComputer()
+            else -> Toast.makeText(this, "ini error", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
     private fun vsPemain() {
+        println("berak")
 
         val batuP = findViewById<View>(R.id.img_batuP1)
         val guntingP = findViewById<View>(R.id.img_guntingP1)
@@ -75,7 +74,9 @@ class GameUtamaActivity : AppCompatActivity() {
         }
     }
 
-    private fun vsComputer() {}
+    private fun vsComputer() {
+        println("tai")
+    }
 
     fun permainan(){
     }

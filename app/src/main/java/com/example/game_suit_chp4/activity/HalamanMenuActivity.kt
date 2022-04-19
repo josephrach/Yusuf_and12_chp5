@@ -18,6 +18,7 @@ class HalamanMenuActivity : AppCompatActivity() {
         setContentView(R.layout.fragment_halaman_menu)
 
         val bundle = Bundle()
+        bundle.putString("nama","awokawok")
 
         val imgVsPemain = findViewById<View>(R.id.img_menu_vspemain)
         val imgVsCom = findViewById<View>(R.id.img_menu_vscom)
@@ -26,14 +27,14 @@ class HalamanMenuActivity : AppCompatActivity() {
 
         imgVsPemain.setOnClickListener{
             Toast.makeText(this, "Vs Pemain Terpencet", Toast.LENGTH_SHORT).show()
-            halamanIntent.putExtra("pilihanUser1",1)
-            println("kepanggilnih1")
+            bundle.putString("pilihanUser","saya 1")
+            halamanIntent.putExtras(bundle)
             startActivity(halamanIntent)
         }
         imgVsCom.setOnClickListener{
             Toast.makeText(this, "Vs Com Terpencet", Toast.LENGTH_SHORT).show()
-            halamanIntent.putExtra("pilihanUser2",2)
-            println("kepanggilnih2")
+            bundle.putString("pilihanUser","saya 2")
+            halamanIntent.putExtras(bundle)
             startActivity(halamanIntent)
         }
     }

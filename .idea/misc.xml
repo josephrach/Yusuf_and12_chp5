@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ucup_c/binar_schl/projek/game_suit_chp4/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/ucup_c/binar_schl/projek/game_suit_chp4/app/src/main/res/layout-w1240dp/content_scrolling.xml" value="0.1" />
         <entry key="..\:/ucup_c/binar_schl/projek/game_suit_chp4/app/src/main/res/layout-w936dp/content_scrolling.xml" value="0.1" />
         <entry key="..\:/ucup_c/binar_schl/projek/game_suit_chp4/app/src/main/res/layout/activity_main.xml" value="0.21" />
@@ -17,6 +18,7 @@
         <entry key="..\:/ucup_c/binar_schl/projek/game_suit_chp4/app/src/main/res/layout/fragment_halaman_menu.xml" value="0.22447916666666667" />
         <entry key="..\:/ucup_c/binar_schl/projek/game_suit_chp4/app/src/main/res/layout/fragment_landing_page1.xml" value="0.1" />
         <entry key="..\:/ucup_c/binar_schl/projek/game_suit_chp4/app/src/main/res/layout/fragment_landing_page2.xml" value="0.22447916666666667" />
+        <entry key="..\:/ucup_c/binar_schl/projek/game_suit_chp4/app/src/main/res/layout/fragment_landing_page3.xml" value="0.25" />
         <entry key="..\:/ucup_c/binar_schl/projek/game_suit_chp4/app/src/main/res/layout/fragment_landing_page3_1.xml" value="0.22447916666666667" />
         <entry key="..\:/ucup_c/binar_schl/projek/game_suit_chp4/app/src/main/res/layout/fragment_landing_page3_2.xml" value="0.22447916666666667" />
         <entry key="..\:/ucup_c/binar_schl/projek/game_suit_chp4/app/src/main/res/layout/fragment_pertama.xml" value="0.1" />
