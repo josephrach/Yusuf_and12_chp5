@@ -6,12 +6,12 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.game_suit_chp4.R
-import com.example.game_suit_chp4.databinding.ActivityMainBinding
-import com.example.game_suit_chp4.databinding.FragmentGameUtamaBinding
+//import com.example.game_suit_chp4.databinding.ActivityMainBinding
+//import com.example.game_suit_chp4.databinding.FragmentGameUtamaBinding
 
 class HalamanMenuActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+//    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

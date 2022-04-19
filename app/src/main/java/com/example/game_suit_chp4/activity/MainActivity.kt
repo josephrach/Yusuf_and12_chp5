@@ -9,7 +9,7 @@ import com.example.game_suit_chp4.adapter.SliderManagerAdapter
 import com.example.game_suit_chp4.fragment.LandingPageFragment1
 import com.example.game_suit_chp4.fragment.LandingPageFragment2
 import com.example.game_suit_chp4.fragment.LandingPageFragment3
-import com.example.game_suit_chp4.databinding.ActivityMainBinding
+
 
 //import kotlinx.android.synthetic.main.activity_main.*
 
