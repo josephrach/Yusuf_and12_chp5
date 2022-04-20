@@ -11,17 +11,21 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.game_suit_chp4.R
+import com.example.game_suit_chp4.databinding.ActivityMainBinding
+import com.example.game_suit_chp4.fragment.ResultDialogFragment
 
 class ResultDialogActivity() : AppCompatActivity() {
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.dialog_fragment_result)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val bundle2 = intent.extras
         val pemenang = bundle2?.getString("pemenang")
         val teksStatus = findViewById<TextView>(R.id.txt_status_hasil)
-        print(pemenang)
+        val vsPemain = R.id.img_aktiveBatuP1
 
         when(pemenang){
             "seri" -> teksStatus.setText(R.string.status_seri)
@@ -29,8 +33,9 @@ class ResultDialogActivity() : AppCompatActivity() {
             "com" -> teksStatus.setText(R.string.status_p2_menang)
         }
 
-//        teksStatus.setText(R.string.status_p1_menang)
         setDialogListener()
+
+
     }
     
     private fun setDialogListener(){
@@ -49,4 +54,5 @@ class ResultDialogActivity() : AppCompatActivity() {
             startActivity(toMenuIntent)
         }
     }
+
 }

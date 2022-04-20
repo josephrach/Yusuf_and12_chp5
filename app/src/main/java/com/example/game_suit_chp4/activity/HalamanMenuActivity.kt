@@ -26,13 +26,13 @@ class HalamanMenuActivity : AppCompatActivity() {
         val halamanIntent = Intent(this, GameUtamaActivity::class.java)
 
         imgVsPemain.setOnClickListener{
-            Toast.makeText(this, "Vs Pemain Terpencet", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Main dengan Pemain 2", Toast.LENGTH_SHORT).show()
             bundle.putString("pilihanUser","saya 1")
             halamanIntent.putExtras(bundle)
             startActivity(halamanIntent)
         }
         imgVsCom.setOnClickListener{
-            Toast.makeText(this, "Vs Com Terpencet", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Main dengan komputer", Toast.LENGTH_SHORT).show()
             bundle.putString("pilihanUser","saya 2")
             halamanIntent.putExtras(bundle)
             startActivity(halamanIntent)

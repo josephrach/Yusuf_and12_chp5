@@ -1,20 +1,25 @@
 package com.example.game_suit_chp4.activity
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.example.game_suit_chp4.R
+import com.example.game_suit_chp4.databinding.ActivityMainBinding
 
 class GameUtamaActivity : AppCompatActivity() {
     private val bundle = Bundle()
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.fragment_game_utama)
 
         val bundle = intent.extras
@@ -24,11 +29,11 @@ class GameUtamaActivity : AppCompatActivity() {
 //        print(pilihanUser)
 //        Toast.makeText(this, "${pilihanUser}", Toast.LENGTH_SHORT).show()
 
+        refresh()
         when(pilihanUser){
             "saya 1" -> vsPemain()
             "saya 2" -> vsComputer()
         }
-
 
         val jawabann :String
 
@@ -38,7 +43,9 @@ class GameUtamaActivity : AppCompatActivity() {
         val dataJawaban = mutableListOf("batu","gunting","kertas")
         var pilihanU = bundle?.getString("pilihanUser")
         var comJawab = dataJawaban.random()
-        println(comJawab)
+
+        val dialogBuilder = Dialog(this)
+        dialogBuilder.setContentView(R.layout.dialog_fragment_result)
 
         var jawaban :String
         val batuP = findViewById<View>(R.id.img_batuP1)
@@ -80,8 +87,9 @@ class GameUtamaActivity : AppCompatActivity() {
             }
             halamanIntent.putExtras(bundle)
             Handler(Looper.getMainLooper()).postDelayed({
-                this.onStop()
-                startActivity(halamanIntent)
+                this.onPause()
+//                startActivity(halamanIntent)
+                dialogBuilder.show()
             }, 1000)
         }
         guntingP.setOnClickListener() {
@@ -148,6 +156,10 @@ class GameUtamaActivity : AppCompatActivity() {
             this.onDestroy()
             this.onRestart()
         }
+    }
+
+    private fun showDialog(){
+
     }
 }
 
