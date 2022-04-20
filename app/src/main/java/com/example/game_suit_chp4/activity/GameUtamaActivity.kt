@@ -47,6 +47,7 @@ class GameUtamaActivity : AppCompatActivity() {
         val batuC = findViewById<View>(R.id.img_batuCom)
         val guntingC = findViewById<View>(R.id.img_guntingCom)
         val kertasC = findViewById<View>(R.id.img_kertasCom)
+        val refresh = findViewById<View>(R.id.img_tombolRefresh)
 
         val batuPaktif = findViewById<View>(R.id.img_aktiveBatuP1)
         val guntingPaktif = findViewById<View>(R.id.img_activeGuntingP1)
@@ -72,12 +73,15 @@ class GameUtamaActivity : AppCompatActivity() {
                     bundle.putString("pemenang","com")
                     kertasCaktif.isVisible = true
                 }
-                "gunting" -> bundle.putString("pemenang","p1")
+                "gunting" -> {
+                    bundle.putString("pemenang","p1")
+                    guntingCaktif.isVisible = true
+                }
                 else -> onRestart()
             }
             halamanIntent.putExtras(bundle)
-            Toast.makeText(this, "kamu memilih ${pilihanU} dan lawan pilih ${comJawab}", Toast.LENGTH_SHORT).show()
             Handler(Looper.getMainLooper()).postDelayed({
+                this.onStop()
                 startActivity(halamanIntent)
             }, 1000)
         }
@@ -131,50 +135,14 @@ class GameUtamaActivity : AppCompatActivity() {
             halamanIntent.putExtras(bundle)
             startActivity(halamanIntent)
         }
-
-    }
-
-    private fun vsComputer() {
-        val dataJawaban = mutableListOf("batu","gunting","kertas")
-        val comJawab = dataJawaban.random()
-        var jawaban :String
-        val batuP = findViewById<View>(R.id.img_batuP1)
-        val guntingP = findViewById<View>(R.id.img_guntingP1)
-        val kertasP = findViewById<View>(R.id.img_kertasP1)
-
-        val halamanIntent = Intent(this, ResultDialogActivity::class.java)
-
-        batuP.setOnClickListener() {
-            jawaban ="batuP"
-            when(comJawab){
-                "batu" -> bundle.putString("pemenang","seri")
-                "kertas" -> bundle.putString("pemenang","com")
-                "gunting" -> bundle.putString("pemenang","p1")
-            }
-            halamanIntent.putExtras(bundle)
-            startActivity(halamanIntent)
-        }
-        guntingP.setOnClickListener() {
-            jawaban ="guntingP"
-            when(comJawab){
-                "batu" -> bundle.putString("pemenang","com")
-                "kertas" -> bundle.putString("pemenang","p1")
-                "gunting" -> bundle.putString("pemenang","seri")
-            }
-            halamanIntent.putExtras(bundle)
-            startActivity(halamanIntent)
-        }
-        kertasP.setOnClickListener() {
-            jawaban ="kertasP"
-            when(comJawab){
-                "batu" -> bundle.putString("pemenang","p1")
-                "kertas" -> bundle.putString("pemenang","seri")
-                "gunting" -> bundle.putString("pemenang","com")
-            }
-            halamanIntent.putExtras(bundle)
-            startActivity(halamanIntent)
+        refresh.setOnClickListener() {
+           this.onRestart()
         }
 
     }
+
+    private fun vsComputer() {}
 
 }
+
+
