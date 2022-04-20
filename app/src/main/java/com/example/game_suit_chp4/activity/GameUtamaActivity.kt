@@ -27,8 +27,8 @@ class GameUtamaActivity : AppCompatActivity() {
         when(pilihanUser){
             "saya 1" -> vsPemain()
             "saya 2" -> vsComputer()
-            else -> Toast.makeText(this, "ini error", Toast.LENGTH_SHORT).show()
         }
+
 
         val jawabann :String
 
@@ -47,7 +47,6 @@ class GameUtamaActivity : AppCompatActivity() {
         val batuC = findViewById<View>(R.id.img_batuCom)
         val guntingC = findViewById<View>(R.id.img_guntingCom)
         val kertasC = findViewById<View>(R.id.img_kertasCom)
-        val refresh = findViewById<View>(R.id.img_tombolRefresh)
 
         val batuPaktif = findViewById<View>(R.id.img_aktiveBatuP1)
         val guntingPaktif = findViewById<View>(R.id.img_activeGuntingP1)
@@ -135,14 +134,21 @@ class GameUtamaActivity : AppCompatActivity() {
             halamanIntent.putExtras(bundle)
             startActivity(halamanIntent)
         }
-        refresh.setOnClickListener() {
-           this.onRestart()
-        }
 
     }
 
     private fun vsComputer() {}
 
+    private fun refresh(){
+
+        val refresh = findViewById<View>(R.id.img_tombolRefresh)
+
+        refresh.setOnClickListener() {
+            this.onStop()
+            this.onDestroy()
+            this.onRestart()
+        }
+    }
 }
 
 
