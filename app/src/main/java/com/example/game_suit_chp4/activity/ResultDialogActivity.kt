@@ -18,9 +18,10 @@ class ResultDialogActivity() : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dialog_fragment_result)
 
-        val bundle = intent.extras
-        val pemenang = bundle?.getString("pemenang")
+        val bundle2 = intent.extras
+        val pemenang = bundle2?.getString("pemenang")
         val teksStatus = findViewById<TextView>(R.id.txt_status_hasil)
+        print(pemenang)
 
         when(pemenang){
             "seri" -> teksStatus.setText(R.string.status_seri)
@@ -28,7 +29,7 @@ class ResultDialogActivity() : AppCompatActivity() {
             "com" -> teksStatus.setText(R.string.status_p2_menang)
         }
 
-        teksStatus.setText(R.string.status_p1_menang)
+//        teksStatus.setText(R.string.status_p1_menang)
         setDialogListener()
     }
     
