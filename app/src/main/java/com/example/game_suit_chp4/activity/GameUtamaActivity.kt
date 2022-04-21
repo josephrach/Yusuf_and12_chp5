@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.example.game_suit_chp4.R
 import com.example.game_suit_chp4.databinding.ActivityMainBinding
+import com.example.game_suit_chp4.databinding.DialogFragmentResultBinding
 
 class GameUtamaActivity : AppCompatActivity() {
     private val bundle = Bundle()
@@ -44,8 +46,15 @@ class GameUtamaActivity : AppCompatActivity() {
         var pilihanU = bundle?.getString("pilihanUser")
         var comJawab = dataJawaban.random()
 
-        val dialogBuilder = Dialog(this)
-        dialogBuilder.setContentView(R.layout.dialog_fragment_result)
+        val dialogView = LayoutInflater.from(this)
+            .inflate(R.layout.dialog_fragment_result,null,false)
+
+        val dialogViewBinding = DialogFragmentResultBinding.bind(dialogView)
+        val dialogCustomLayoutBinder = AlertDialog.Builder(this).setView(dialogViewBinding.root)
+
+        val dialogCustomLayout = dialogCustomLayoutBinder.create()
+
+        val halamanIntent = Intent(this, ResultDialogActivity::class.java)
 
         var jawaban :String
         val batuP = findViewById<View>(R.id.img_batuP1)
@@ -63,12 +72,7 @@ class GameUtamaActivity : AppCompatActivity() {
         val kertasCaktif = findViewById<View>(R.id.img_activeKertasCom)
 
 
-
-
-        val halamanIntent = Intent(this, ResultDialogActivity::class.java)
-
         batuP.setOnClickListener() {
-//            jawaban ="batuP"
             batuPaktif.isVisible = true
             when(comJawab){
                 "batu" -> {
@@ -83,13 +87,12 @@ class GameUtamaActivity : AppCompatActivity() {
                     bundle.putString("pemenang","p1")
                     guntingCaktif.isVisible = true
                 }
-                else -> onRestart()
             }
             halamanIntent.putExtras(bundle)
             Handler(Looper.getMainLooper()).postDelayed({
                 this.onPause()
 //                startActivity(halamanIntent)
-                dialogBuilder.show()
+                dialogCustomLayout.show()
             }, 1000)
         }
         guntingP.setOnClickListener() {
@@ -152,8 +155,6 @@ class GameUtamaActivity : AppCompatActivity() {
         val refresh = findViewById<View>(R.id.img_tombolRefresh)
 
         refresh.setOnClickListener() {
-            this.onStop()
-            this.onDestroy()
             this.onRestart()
         }
     }

@@ -25,7 +25,7 @@ class ResultDialogActivity() : AppCompatActivity() {
         val bundle2 = intent.extras
         val pemenang = bundle2?.getString("pemenang")
         val teksStatus = findViewById<TextView>(R.id.txt_status_hasil)
-        val vsPemain = R.id.img_aktiveBatuP1
+        Toast.makeText(this, "fungsi jalan kok", Toast.LENGTH_SHORT).show()
 
         when(pemenang){
             "seri" -> teksStatus.setText(R.string.status_seri)
@@ -34,8 +34,6 @@ class ResultDialogActivity() : AppCompatActivity() {
         }
 
         setDialogListener()
-
-
     }
     
     private fun setDialogListener(){

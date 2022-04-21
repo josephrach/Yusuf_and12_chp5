@@ -14,13 +14,14 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_splash_screen)
 
-        val halIntent = Intent(this, HalamanMenuActivity::class.java)
+        val halIntent = Intent(this, LandingPageActivity3::class.java)
 
         val toast = Toast.makeText(this, "ini splash screen", Toast.LENGTH_SHORT)
         toast.show()
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(halIntent)
+            this.onStop()
         }, 3000)
 
     }

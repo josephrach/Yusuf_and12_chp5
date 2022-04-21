@@ -21,6 +21,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/txt_label_tulisnama"
             android:layout_width="291dp"
             android:layout_height="53dp"
             android:fontFamily="@font/patrick_hand_regular"
@@ -42,6 +43,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:hint="Masukan Nama Anda"/>
+
+        <Button
+            android:id="@+id/btn_lp3_lanjut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="Lanjut"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_nama_lp3"
+            app:layout_constraintVertical_bias="0.416" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
