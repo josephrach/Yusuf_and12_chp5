@@ -89,8 +89,10 @@ class GameUtamaActivity : AppCompatActivity() {
 
         var d = AlertDialog.Builder(this)
         d.setTitle("Hasil Permainan")
-        d.setPositiveButton("Main Lagi",{dialog:DialogInterface?,which: Int -> var i = Intent(this,GameUtamaActivity::class.java)})
-        d.setNegativeButton("Kembali ke Halaman Menu",{dialog:DialogInterface?,which: Int -> var i = Intent(this,HalamanMenuActivity::class.java)})
+        d.setNegativeButton("Main Lagi",{dialog:DialogInterface?,which: Int -> var i = Intent(this,GameUtamaActivity::class.java)
+            startActivity(i)})
+        d.setNeutralButton("Kembali ke Halaman Menu",{dialog:DialogInterface?,which: Int -> var i = Intent(this,HalamanMenuActivity::class.java)
+            startActivity(i)})
 
         fun showDialogResult(jawabanp1:String, jawabanp2:String,seri:String,pemain1menang:String,pemain2menang:String,computermenang:String){
             var jawabanP1 = jawabanp1
@@ -198,8 +200,10 @@ class GameUtamaActivity : AppCompatActivity() {
 
         var d = AlertDialog.Builder(this)
         d.setTitle("Hasil Permainan")
-        d.setPositiveButton("Main Lagi",{dialog:DialogInterface?,which: Int -> var i = Intent(this,GameUtamaActivity::class.java)})
-        d.setNegativeButton("Kembali ke Halaman Menu",{dialog:DialogInterface?,which: Int -> var i = Intent(this,HalamanMenuActivity::class.java)})
+        d.setNegativeButton("Main Lagi",{dialog:DialogInterface?,which: Int -> var i = Intent(this,GameUtamaActivity::class.java)
+            startActivity(i)})
+        d.setNeutralButton("Kembali ke Halaman Menu",{dialog:DialogInterface?,which: Int -> var i = Intent(this,HalamanMenuActivity::class.java)
+            startActivity(i)})
 
         batuP.setOnClickListener {
             batuPaktif.isVisible = true
