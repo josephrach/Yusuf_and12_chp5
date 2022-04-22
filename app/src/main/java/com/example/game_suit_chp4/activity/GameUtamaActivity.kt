@@ -1,6 +1,8 @@
 package com.example.game_suit_chp4.activity
 
+import android.app.Activity
 import android.app.Dialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -41,10 +43,6 @@ class GameUtamaActivity : AppCompatActivity() {
     }
 
     fun BvsPemain(){
-        val dataJawaban = mutableListOf("batu","gunting","kertas")
-        var pilihanU = bundle?.getString("pilihanUser")
-        var comJawab = dataJawaban.random()
-
         val bundle1 = intent.extras
         val namaUser = bundle1?.getString("namaUser")
 
@@ -66,6 +64,97 @@ class GameUtamaActivity : AppCompatActivity() {
         val batuCaktif = findViewById<View>(R.id.img_aktiveBatuCom)
         val guntingCaktif = findViewById<View>(R.id.img_activeGuntingCom)
         val kertasCaktif = findViewById<View>(R.id.img_activeKertasCom)
+
+        var jawabanP1: String = ""
+        var jawabanP2: String = ""
+
+        batuP.setOnClickListener{
+            batuPaktif.isVisible = true
+            jawabanP1 = "batu"
+        }
+        guntingP.setOnClickListener{
+            guntingPaktif.isVisible = true
+            jawabanP1 = "gunting"
+        }
+        kertasP.setOnClickListener{
+            kertasPaktif.isVisible = true
+            jawabanP1 = "kertas"
+        }
+
+        var d = AlertDialog.Builder(this)
+        d.setTitle("Hasil Permainan")
+        d.setPositiveButton("Main Lagi",{dialog:DialogInterface?,which: Int -> var i = Intent(this,GameUtamaActivity::class.java)})
+
+        fun showDialogResult(jawabanp1:String, jawabanp2:String,seri:String,pemain1menang:String,pemain2menang:String,computermenang:String){
+            var jawabanP1 = jawabanp1
+            var jawabanP2 = jawabanp2
+            var seri = seri
+            var pemain1Menang = pemain1menang
+            var pemain2Menang = pemain2menang
+            var computerMenang = computermenang
+
+            when(jawabanP1){
+                "batu" ->{
+                    when(jawabanP2){
+                        "batu" -> {
+                            d.setMessage(seri)
+                        }
+                        "gunting" -> {
+                            d.setMessage(pemain1Menang)
+                        }
+                        "kertas" -> {
+                            d.setMessage(pemain2Menang)
+                        }
+                    }
+                }
+                "gunting" ->{
+                    when(jawabanP2){
+                        "batu" -> {
+                            d.setMessage(pemain2Menang)
+                        }
+                        "gunting" -> {
+                            d.setMessage(seri)
+                        }
+                        "kertas" -> {
+                            d.setMessage(pemain1Menang)
+                        }
+                    }
+                }
+                "kertas" ->{
+                    when(jawabanP2){
+                        "batu" -> {
+                            d.setMessage(pemain1Menang)
+                        }
+                        "gunting" -> {
+                            d.setMessage(pemain2Menang)
+                        }
+                        "kertas" -> {
+                            d.setMessage(seri)
+                        }
+                    }
+                }
+            }
+
+        }
+
+        batuC.setOnClickListener{
+            batuCaktif.isVisible = true
+            jawabanP2 = "batu"
+            showDialogResult(jawabanP1,jawabanP2,seri,pemain1Menang,pemain2Menang,computerMenang)
+            d.show()
+        }
+        guntingC.setOnClickListener{
+            guntingCaktif.isVisible = true
+            jawabanP2 = "gunting"
+            showDialogResult(jawabanP1,jawabanP2,seri,pemain1Menang,pemain2Menang,computerMenang)
+            d.show()
+        }
+        kertasC.setOnClickListener{
+            kertasCaktif.isVisible = true
+            jawabanP2 = "kertas"
+            showDialogResult(jawabanP1,jawabanP2,seri,pemain1Menang,pemain2Menang,computerMenang)
+            d.show()
+        }
 
 
     }
