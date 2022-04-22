@@ -9,6 +9,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -32,6 +33,8 @@ class GameUtamaActivity : AppCompatActivity() {
         val bundle1 = intent.extras
         val pilihanUser = bundle1?.getString("pilihanUser")
         val namaUser = bundle1?.getString("namaUser")
+        val namePemain1 = findViewById<TextView>(R.id.txt_pemain1)
+        namePemain1.setText(namaUser)
 
         refresh()
         when(pilihanUser){
@@ -46,6 +49,8 @@ class GameUtamaActivity : AppCompatActivity() {
     fun BvsPemain(){
         val bundle1 = intent.extras
         val namaUser = bundle1?.getString("namaUser")
+        val namePemain2 = findViewById<TextView>(R.id.txt_pemain2)
+        namePemain2.setText("Pemain 2")
 
         var seri : String = "SERI!"
         var pemain1Menang : String = "${namaUser} MENANG!"
@@ -169,6 +174,8 @@ class GameUtamaActivity : AppCompatActivity() {
 
         val bundle1 = intent.extras
         val namaUser = bundle1?.getString("namaUser")
+        val namePemain2 = findViewById<TextView>(R.id.txt_pemain2)
+        namePemain2.setText("COM")
 
         var seri : String = "SERI!"
         var pemain1Menang : String = "${namaUser} MENANG!"
@@ -369,9 +376,7 @@ class GameUtamaActivity : AppCompatActivity() {
         val refreshIntent = Intent(this,GameUtamaActivity::class.java)
 
         refresh.setOnClickListener() {
-            super.onStop()
             super.onRestart()
-            startActivity(refreshIntent)
         }
     }
 
