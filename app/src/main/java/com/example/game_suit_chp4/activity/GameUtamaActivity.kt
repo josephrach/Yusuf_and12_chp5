@@ -16,32 +16,87 @@ import com.example.game_suit_chp4.databinding.ActivityMainBinding
 import com.example.game_suit_chp4.databinding.DialogFragmentResultBinding
 
 class GameUtamaActivity : AppCompatActivity() {
-    private val bundle = Bundle()
+
+    val bundle = Bundle()
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+//        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.fragment_game_utama)
+        Toast.makeText(this, "ini game utama", Toast.LENGTH_SHORT).show()
 
-        val bundle = intent.extras
-        val pilihanUser = bundle?.getString("pilihanUser")
-//        val pilihanUser2 = bundle?.getInt("pilihanMenu2")
-//        val hasilJumlah = pilihanUser1?.plus(pilihanUser2!!)
-//        print(pilihanUser)
-//        Toast.makeText(this, "${pilihanUser}", Toast.LENGTH_SHORT).show()
+        val bundle1 = intent.extras
+        val pilihanUser = bundle1?.getString("pilihanUser")
+        val namaUser = bundle1?.getString("namaUser")
 
         refresh()
         when(pilihanUser){
-            "saya 1" -> vsPemain()
-            "saya 2" -> vsComputer()
+            "saya 1" -> BvsPemain()
+            "saya 2" -> BvsComputer()
         }
 
         val jawabann :String
 
     }
 
-    private fun vsPemain() {
+    fun BvsPemain(){ val dataJawaban = mutableListOf("batu","gunting","kertas")
+    var pilihanU = bundle?.getString("pilihanUser")
+    var comJawab = dataJawaban.random()
+
+    val bundle1 = intent.extras
+    val namaUser = bundle1?.getString("namaUser")
+
+    var seri : String = "SERI!"
+    var pemain1Menang : String = "${namaUser} MENANG!"
+    var pemain2Menang : String
+
+    val batuP = findViewById<View>(R.id.img_batuP1)
+    val guntingP = findViewById<View>(R.id.img_guntingP1)
+    val kertasP = findViewById<View>(R.id.img_kertasP1)
+    val batuC = findViewById<View>(R.id.img_batuCom)
+    val guntingC = findViewById<View>(R.id.img_guntingCom)
+    val kertasC = findViewById<View>(R.id.img_kertasCom)
+
+    val batuPaktif = findViewById<View>(R.id.img_aktiveBatuP1)
+    val guntingPaktif = findViewById<View>(R.id.img_activeGuntingP1)
+    val kertasPaktif = findViewById<View>(R.id.img_activeKertasP1)
+    val batuCaktif = findViewById<View>(R.id.img_aktiveBatuCom)
+    val guntingCaktif = findViewById<View>(R.id.img_activeGuntingCom)
+    val kertasCaktif = findViewById<View>(R.id.img_activeKertasCom)
+
+        batuP.setOnClickListener {
+            var d = AlertDialog.Builder(this)
+            d.setTitle("Hasil Permainan")
+
+            when (comJawab) {
+                "batu" -> {
+                    batuCaktif.isVisible = true
+                    d.setMessage("")
+
+                }
+                "kertas" -> {
+                    bundle.putString("pemenang", "com")
+                    kertasCaktif.isVisible = true
+                }
+                "gunting" -> {
+                    bundle.putString("pemenang", "p1")
+                    guntingCaktif.isVisible = true
+                }
+            }
+
+
+            d.show()
+        }
+    }
+
+
+    fun BvsComputer(){
+
+    }
+
+
+    fun vsPemain() {
         val dataJawaban = mutableListOf("batu","gunting","kertas")
         var pilihanU = bundle?.getString("pilihanUser")
         var comJawab = dataJawaban.random()
@@ -148,9 +203,9 @@ class GameUtamaActivity : AppCompatActivity() {
 
     }
 
-    private fun vsComputer() {}
+    fun vsComputer() {}
 
-    private fun refresh(){
+    fun refresh(){
 
         val refresh = findViewById<View>(R.id.img_tombolRefresh)
 
@@ -159,9 +214,10 @@ class GameUtamaActivity : AppCompatActivity() {
         }
     }
 
-    private fun showDialog(){
+    fun showDialog(){
 
     }
 }
+
 
 

@@ -16,9 +16,6 @@ class SplashScreenActivity : AppCompatActivity() {
 
         val halIntent = Intent(this, LandingPageActivity1::class.java)
 
-        val toast = Toast.makeText(this, "ini splash screen", Toast.LENGTH_SHORT)
-        toast.show()
-
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(halIntent)
             this.onStop()
