@@ -16,6 +16,7 @@ import androidx.core.view.isVisible
 import com.example.game_suit_chp4.R
 import com.example.game_suit_chp4.databinding.ActivityMainBinding
 import com.example.game_suit_chp4.databinding.DialogFragmentResultBinding
+import com.example.game_suit_chp4.logic.Game
 
 class GameUtamaActivity : AppCompatActivity() {
 
@@ -84,6 +85,7 @@ class GameUtamaActivity : AppCompatActivity() {
         var d = AlertDialog.Builder(this)
         d.setTitle("Hasil Permainan")
         d.setPositiveButton("Main Lagi",{dialog:DialogInterface?,which: Int -> var i = Intent(this,GameUtamaActivity::class.java)})
+        d.setNegativeButton("Kembali ke Halaman Menu",{dialog:DialogInterface?,which: Int -> var i = Intent(this,HalamanMenuActivity::class.java)})
 
         fun showDialogResult(jawabanp1:String, jawabanp2:String,seri:String,pemain1menang:String,pemain2menang:String,computermenang:String){
             var jawabanP1 = jawabanp1
@@ -187,15 +189,56 @@ class GameUtamaActivity : AppCompatActivity() {
         val guntingCaktif = findViewById<View>(R.id.img_activeGuntingCom)
         val kertasCaktif = findViewById<View>(R.id.img_activeKertasCom)
 
+        var d = AlertDialog.Builder(this)
+        d.setTitle("Hasil Permainan")
+        d.setPositiveButton("Main Lagi",{dialog:DialogInterface?,which: Int -> var i = Intent(this,GameUtamaActivity::class.java)})
+        d.setNegativeButton("Kembali ke Halaman Menu",{dialog:DialogInterface?,which: Int -> var i = Intent(this,HalamanMenuActivity::class.java)})
+
         batuP.setOnClickListener {
-            var d = AlertDialog.Builder(this)
-            d.setTitle("Hasil Permainan")
+            batuPaktif.isVisible = true
 
             when (comJawab) {
                 "batu" -> {
                     batuCaktif.isVisible = true
                     d.setMessage(seri)
+                }
+                "kertas" -> {
+                    kertasCaktif.isVisible = true
+                    d.setMessage(computerMenang)
+                }
+                "gunting" -> {
+                    guntingCaktif.isVisible = true
+                    d.setMessage(pemain1Menang)
+                }
+            }
+            d.show()
+        }
+        kertasP.setOnClickListener {
+            kertasPaktif.isVisible = true
 
+            when (comJawab) {
+                "batu" -> {
+                    batuCaktif.isVisible = true
+                    d.setMessage(pemain1Menang)
+                }
+                "kertas" -> {
+                    kertasCaktif.isVisible = true
+                    d.setMessage(seri)
+                }
+                "gunting" -> {
+                    guntingCaktif.isVisible = true
+                    d.setMessage(computerMenang)
+                }
+            }
+            d.show()
+        }
+        guntingP.setOnClickListener {
+            guntingPaktif.isVisible = true
+
+            when (comJawab) {
+                "batu" -> {
+                    batuCaktif.isVisible = true
+                    d.setMessage(computerMenang)
                 }
                 "kertas" -> {
                     kertasCaktif.isVisible = true
@@ -203,11 +246,9 @@ class GameUtamaActivity : AppCompatActivity() {
                 }
                 "gunting" -> {
                     guntingCaktif.isVisible = true
-                    d.setMessage(pemain2Menang)
+                    d.setMessage(seri)
                 }
             }
-
-
             d.show()
         }
     }
@@ -325,9 +366,12 @@ class GameUtamaActivity : AppCompatActivity() {
     fun refresh(){
 
         val refresh = findViewById<View>(R.id.img_tombolRefresh)
+        val refreshIntent = Intent(this,GameUtamaActivity::class.java)
 
         refresh.setOnClickListener() {
-            this.onRestart()
+            super.onStop()
+            super.onRestart()
+            startActivity(refreshIntent)
         }
     }
 
