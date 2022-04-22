@@ -40,30 +40,63 @@ class GameUtamaActivity : AppCompatActivity() {
 
     }
 
-    fun BvsPemain(){ val dataJawaban = mutableListOf("batu","gunting","kertas")
-    var pilihanU = bundle?.getString("pilihanUser")
-    var comJawab = dataJawaban.random()
+    fun BvsPemain(){
+        val dataJawaban = mutableListOf("batu","gunting","kertas")
+        var pilihanU = bundle?.getString("pilihanUser")
+        var comJawab = dataJawaban.random()
 
-    val bundle1 = intent.extras
-    val namaUser = bundle1?.getString("namaUser")
+        val bundle1 = intent.extras
+        val namaUser = bundle1?.getString("namaUser")
 
-    var seri : String = "SERI!"
-    var pemain1Menang : String = "${namaUser} MENANG!"
-    var pemain2Menang : String
+        var seri : String = "SERI!"
+        var pemain1Menang : String = "${namaUser} MENANG!"
+        var pemain2Menang : String = "Pemain 2 MENANG!"
+        var computerMenang : String = "Computer MENANG!"
 
-    val batuP = findViewById<View>(R.id.img_batuP1)
-    val guntingP = findViewById<View>(R.id.img_guntingP1)
-    val kertasP = findViewById<View>(R.id.img_kertasP1)
-    val batuC = findViewById<View>(R.id.img_batuCom)
-    val guntingC = findViewById<View>(R.id.img_guntingCom)
-    val kertasC = findViewById<View>(R.id.img_kertasCom)
+        val batuP = findViewById<View>(R.id.img_batuP1)
+        val guntingP = findViewById<View>(R.id.img_guntingP1)
+        val kertasP = findViewById<View>(R.id.img_kertasP1)
+        val batuC = findViewById<View>(R.id.img_batuCom)
+        val guntingC = findViewById<View>(R.id.img_guntingCom)
+        val kertasC = findViewById<View>(R.id.img_kertasCom)
 
-    val batuPaktif = findViewById<View>(R.id.img_aktiveBatuP1)
-    val guntingPaktif = findViewById<View>(R.id.img_activeGuntingP1)
-    val kertasPaktif = findViewById<View>(R.id.img_activeKertasP1)
-    val batuCaktif = findViewById<View>(R.id.img_aktiveBatuCom)
-    val guntingCaktif = findViewById<View>(R.id.img_activeGuntingCom)
-    val kertasCaktif = findViewById<View>(R.id.img_activeKertasCom)
+        val batuPaktif = findViewById<View>(R.id.img_aktiveBatuP1)
+        val guntingPaktif = findViewById<View>(R.id.img_activeGuntingP1)
+        val kertasPaktif = findViewById<View>(R.id.img_activeKertasP1)
+        val batuCaktif = findViewById<View>(R.id.img_aktiveBatuCom)
+        val guntingCaktif = findViewById<View>(R.id.img_activeGuntingCom)
+        val kertasCaktif = findViewById<View>(R.id.img_activeKertasCom)
+
+
+    }
+
+
+    fun BvsComputer(){
+        val dataJawaban = mutableListOf("batu","gunting","kertas")
+        var pilihanU = bundle?.getString("pilihanUser")
+        var comJawab = dataJawaban.random()
+
+        val bundle1 = intent.extras
+        val namaUser = bundle1?.getString("namaUser")
+
+        var seri : String = "SERI!"
+        var pemain1Menang : String = "${namaUser} MENANG!"
+        var pemain2Menang : String = "Pemain 2 MENANG!"
+        var computerMenang : String = "Computer MENANG!"
+
+        val batuP = findViewById<View>(R.id.img_batuP1)
+        val guntingP = findViewById<View>(R.id.img_guntingP1)
+        val kertasP = findViewById<View>(R.id.img_kertasP1)
+        val batuC = findViewById<View>(R.id.img_batuCom)
+        val guntingC = findViewById<View>(R.id.img_guntingCom)
+        val kertasC = findViewById<View>(R.id.img_kertasCom)
+
+        val batuPaktif = findViewById<View>(R.id.img_aktiveBatuP1)
+        val guntingPaktif = findViewById<View>(R.id.img_activeGuntingP1)
+        val kertasPaktif = findViewById<View>(R.id.img_activeKertasP1)
+        val batuCaktif = findViewById<View>(R.id.img_aktiveBatuCom)
+        val guntingCaktif = findViewById<View>(R.id.img_activeGuntingCom)
+        val kertasCaktif = findViewById<View>(R.id.img_activeKertasCom)
 
         batuP.setOnClickListener {
             var d = AlertDialog.Builder(this)
@@ -72,27 +105,22 @@ class GameUtamaActivity : AppCompatActivity() {
             when (comJawab) {
                 "batu" -> {
                     batuCaktif.isVisible = true
-                    d.setMessage("")
+                    d.setMessage(seri)
 
                 }
                 "kertas" -> {
-                    bundle.putString("pemenang", "com")
                     kertasCaktif.isVisible = true
+                    d.setMessage(pemain1Menang)
                 }
                 "gunting" -> {
-                    bundle.putString("pemenang", "p1")
                     guntingCaktif.isVisible = true
+                    d.setMessage(pemain2Menang)
                 }
             }
 
 
             d.show()
         }
-    }
-
-
-    fun BvsComputer(){
-
     }
 
 
