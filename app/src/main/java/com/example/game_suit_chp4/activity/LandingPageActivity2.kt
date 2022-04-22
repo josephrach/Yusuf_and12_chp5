@@ -15,7 +15,9 @@ class LandingPageActivity2: AppCompatActivity() {
         val lp2Indtent = Intent(this, LandingPageActivity3::class.java )
 
         val btnLanjut = findViewById<Button>(R.id.btn_lp2_lanjut)
-//        btnLanjut.setOnClickListener()
+        btnLanjut.setOnClickListener{
+            startActivity(lp2Indtent)
+        }
 
     }
 }

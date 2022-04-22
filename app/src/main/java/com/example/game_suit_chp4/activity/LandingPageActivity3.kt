@@ -16,13 +16,13 @@ class LandingPageActivity3 : AppCompatActivity() {
         setContentView(R.layout.fragment_landing_page3)
         val lp3Indtent = Intent(this, HalamanMenuActivity::class.java)
         val teksInput = findViewById<EditText>(R.id.input_nama_lp3)
-        var namaUser = teksInput.getText().toString()
         val bundle = Bundle()
-        bundle.putString("namaUser",namaUser)
-        lp3Indtent.putExtras(bundle)
 
         val btnLanjut = findViewById<Button>(R.id.btn_lp3_lanjut)
         btnLanjut.setOnClickListener{
+            var namaUser = teksInput.getText().toString()
+            bundle.putString("namaUser",namaUser)
+            lp3Indtent.putExtras(bundle)
             startActivity(lp3Indtent)
         }
 
